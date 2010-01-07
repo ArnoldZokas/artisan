@@ -1,0 +1,9 @@
+C:\Projects\Artisan\lib\xUnit.net Specifications\xunit.specifications\obj\Release\ResolveAssemblyReference.cache
+C:\Projects\Artisan\lib\xUnit.net Specifications\build\Xunit.Specifications.dll
+C:\Projects\Artisan\lib\xUnit.net Specifications\build\Xunit.Specifications.pdb
+C:\Projects\Artisan\lib\xUnit.net Specifications\xunit.specifications\obj\Release\Xunit.Specifications.dll
+C:\Projects\Artisan\lib\xUnit.net Specifications\xunit.specifications\obj\Release\Xunit.Specifications.pdb
+C:\Projects\Artisan\lib\xUnit.net Specifications\_build\Xunit.Specifications.dll
+C:\Projects\Artisan\lib\xUnit.net Specifications\_build\Xunit.Specifications.pdb
+C:\Projects\Artisan\lib\xUnit.net Specifications\__build\Xunit.Specifications.dll
+C:\Projects\Artisan\lib\xUnit.net Specifications\__build\Xunit.Specifications.pdb

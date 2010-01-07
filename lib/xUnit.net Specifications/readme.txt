@@ -1,0 +1,1 @@
+Based on Phil Haack's BDD post at http://haacked.com/archive/2008/08/24/introducing-subspec.aspx

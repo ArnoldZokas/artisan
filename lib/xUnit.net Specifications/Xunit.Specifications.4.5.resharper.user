@@ -1,0 +1,78 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="var" priority="0" />
+      <Item value="method" priority="0" />
+      <Item value="as" priority="3" />
+      <Item value="methodInfo" priority="0" />
+      <Item value="_method" priority="0" />
+      <Item value="MethodInfo" priority="1" />
+      <Item value="null" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Xunit.Sdk.IMethodInfo">
+      <Item value="ReturnType" priority="0" />
+      <Item value="CreateInstance" priority="0" />
+      <Item value="TypeName" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.MethodInfo">
+      <Item value="ReflectedType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="FullName" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/d:Properties/f:AssemblyInfo.cs" caret="327" fromTop="8" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:ExceptionTestCommand.cs" caret="1268" fromTop="49" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationAttribute.cs" caret="0" fromTop="0" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationExtensions.cs" caret="197" fromTop="8" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="565" fromTop="24" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:ExceptionTestCommand.cs" caret="1268" fromTop="54" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:ExceptionTestCommand.cs" caret="1268" fromTop="54" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:ExceptionTestCommand.cs" caret="97" fromTop="5" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationAttribute.cs" caret="612" fromTop="6" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="4411" fromTop="6" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationExtensions.cs" caret="582" fromTop="7" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="397" fromTop="0" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="4404" fromTop="173" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="3551" fromTop="135" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="3499" fromTop="131" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationAttribute.cs" caret="0" fromTop="0" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationAttribute.cs" caret="612" fromTop="10" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:ExceptionTestCommand.cs" caret="800" fromTop="40" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:ExceptionTestCommand.cs" caret="242" fromTop="10" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:ExceptionTestCommand.cs" caret="973" fromTop="46" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationAttribute.cs" caret="612" fromTop="22" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="2048" fromTop="63" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationAttribute.cs" caret="612" fromTop="17" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationAttribute.cs" caret="612" fromTop="11" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="3414" fromTop="23" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="3080" fromTop="34" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationExtensions.cs" caret="582" fromTop="3" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/d:Properties/f:AssemblyInfo.cs" caret="327" fromTop="8" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="4282" fromTop="35" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:ExceptionTestCommand.cs" caret="1196" fromTop="51" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationExtensions.cs" caret="206" fromTop="10" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationExtensions.cs" caret="197" fromTop="8" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="860" fromTop="36" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="516" fromTop="20" />
+      <File id="3C9335DF-3E2B-428F-86D7-2A4B58B27F0A/f:SpecificationContext.cs" caret="656" fromTop="26" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+</Configuration>
