@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2AC40073-EB84-4415-90EC-A942812692E5}</ProjectGuid>
+    <ProjectGuid>{4BF69E85-2A23-43E3-89A5-15F28FB13FC5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Artisan.Specifications</RootNamespace>
-    <AssemblyName>Artisan.Specifications</AssemblyName>
+    <RootNamespace>Artisan.Specifications.Utils</RootNamespace>
+    <AssemblyName>Artisan.Specifications.Utils</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,14 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Compilation\Parsing\TokeniserSpecification.cs" />
+    <Compile Include="Extensions\GenericExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Scripting, Version=0.9.6.20, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Microsoft Dynamic Language Runtime 0.9.6.20\Microsoft.Scripting.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -46,24 +42,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\xUnit.net 1.5\xunit.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.extensions, Version=1.5.0.1479, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\xUnit.net 1.5\xunit.extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Xunit.Specifications, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\xUnit.net Specifications\__build\Xunit.Specifications.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Artisan.Specifications.Utils\Artisan.Specifications.Utils.csproj">
-      <Project>{4BF69E85-2A23-43E3-89A5-15F28FB13FC5}</Project>
-      <Name>Artisan.Specifications.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Artisan\Artisan.csproj">
-      <Project>{E9D96394-51A4-4A7D-B90C-82806E850AC1}</Project>
-      <Name>Artisan</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,6 +11,7 @@
 //  #######################################################
 using System;
 using Artisan.Compilation.Parsing;
+using Artisan.Specifications.Utils.Extensions;
 using Microsoft.Scripting;
 using Xunit;
 using Xunit.Specifications;
@@ -26,7 +27,7 @@ namespace Artisan.Specifications.Compilation.Parsing
 
 			"Given a new Tokeniser".Context(() => tokeniser = new Tokeniser());
 
-			"CurrentState is null".Assert(() => Assert.Null(tokeniser.CurrentState));
+			"CurrentState is null".Assert(() => tokeniser.CurrentState.ShouldBeNull());
 			"CurrentPosition throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.CurrentPosition));
 			"IsRestartable throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.IsRestartable));
 			"ErrorSink throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.ErrorSink));
