@@ -9,7 +9,9 @@
 //  # You must not remove this notice, or any other, from this software.
 //  
 //  #######################################################
+using System;
 using Artisan.Compilation.Parsing;
+using Microsoft.Scripting;
 using Xunit;
 using Xunit.Specifications;
 
@@ -25,6 +27,39 @@ namespace Artisan.Specifications.Compilation.Parsing
 			"Given a new Tokeniser".Context(() => tokeniser = new Tokeniser());
 
 			"CurrentState is null".Assert(() => Assert.Null(tokeniser.CurrentState));
+			"CurrentPosition throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.CurrentPosition));
+			"IsRestartable throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.IsRestartable));
+			"ErrorSink throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.ErrorSink));
+		}
+
+		[Specification]
+		public void InitializeSpecification()
+		{
+			Tokeniser tokeniser = null;
+
+			"Given new Tokeniser".Context(() => tokeniser = new Tokeniser());
+
+			"Initialise throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.Initialize(null, null, null, SourceLocation.None)));
+		}
+
+		[Specification]
+		public void ReadTokenSpecification()
+		{
+			Tokeniser tokeniser = null;
+
+			"Given new Tokeniser".Context(() => tokeniser = new Tokeniser());
+
+			"ReadToken throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.ReadToken()));
+		}
+
+		[Specification]
+		public void ErrorSinkSpecification()
+		{
+			Tokeniser tokeniser = null;
+
+			"Given new Tokeniser".Context(() => tokeniser = new Tokeniser());
+
+			"ErrorSink setter throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser));
 		}
 	}
 }
