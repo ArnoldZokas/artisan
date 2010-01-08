@@ -19,5 +19,10 @@ namespace Artisan.Specifications.Utils.Extensions
 		{
 			Assert.Null(@object);
 		}
+
+		public static void ShouldBe<T>(this T actualValue, T expectedValue)
+		{
+			Assert.Equal(expectedValue, actualValue);
+		}
 	}
 }

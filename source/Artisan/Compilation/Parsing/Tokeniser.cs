@@ -31,7 +31,7 @@ namespace Artisan.Compilation.Parsing
 
 		public override bool IsRestartable
 		{
-			get { throw new NotImplementedException(); }
+			get { return false; }
 		}
 
 		public override ErrorSink ErrorSink

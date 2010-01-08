@@ -29,7 +29,6 @@ namespace Artisan.Specifications.Compilation.Parsing
 
 			"CurrentState is null".Assert(() => tokeniser.CurrentState.ShouldBeNull());
 			"CurrentPosition throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.CurrentPosition));
-			"IsRestartable throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.IsRestartable));
 			"ErrorSink throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.ErrorSink));
 		}
 
@@ -62,6 +61,16 @@ namespace Artisan.Specifications.Compilation.Parsing
 
 			"ErrorSink setter throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.ErrorSink = ErrorSink.Default));
 			"ErrorSink setter throws ArgumentNullException when value passed is null".Assert(() => Assert.Throws<ArgumentNullException>(() => tokeniser.ErrorSink = null));
+		}
+
+		[Specification]
+		public void IsRestartableSpecification()
+		{
+			Tokeniser tokeniser = null;
+
+			"Given new Tokeniser".Context(() => tokeniser = new Tokeniser());
+
+			"IsRestartable is false".Assert(() => tokeniser.IsRestartable.ShouldBe(false));
 		}
 	}
 }
