@@ -60,7 +60,8 @@ namespace Artisan.Specifications.Compilation.Parsing
 
 			"Given new Tokeniser".Context(() => tokeniser = new Tokeniser());
 
-			"ErrorSink setter throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser));
+			"ErrorSink setter throws NotImplementedException".Assert(() => Assert.Throws<NotImplementedException>(() => tokeniser.ErrorSink = ErrorSink.Default));
+			"ErrorSink setter throws ArgumentNullException when value passed is null".Assert(() => Assert.Throws<ArgumentNullException>(() => tokeniser.ErrorSink = null));
 		}
 	}
 }

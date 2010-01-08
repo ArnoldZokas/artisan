@@ -11,6 +11,7 @@
 //  #######################################################
 using System;
 using System.IO;
+using Artisan.Utils;
 using Microsoft.Scripting;
 using Microsoft.Scripting.Runtime;
 
@@ -36,7 +37,11 @@ namespace Artisan.Compilation.Parsing
 		public override ErrorSink ErrorSink
 		{
 			get { throw new NotImplementedException(); }
-			set { throw new NotImplementedException(); }
+			set
+			{
+				RuntimeContract.RequiresParameter(value, "value");
+				throw new NotImplementedException();
+			}
 		}
 
 		public override void Initialize(object state, TextReader sourceReader, SourceUnit sourceUnit, SourceLocation initialLocation)
