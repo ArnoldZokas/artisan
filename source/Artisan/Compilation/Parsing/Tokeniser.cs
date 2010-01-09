@@ -19,6 +19,16 @@ namespace Artisan.Compilation.Parsing
 {
 	public class Tokeniser : TokenizerService
 	{
+		private char[] _currentLine;
+		private SourceLocation _currentPosition;
+		private SourceLocation _initialPosition;
+		private TextReader _reader;
+
+		public Tokeniser()
+		{
+			_currentPosition = SourceLocation.None;
+		}
+
 		public override object CurrentState
 		{
 			get { return null; }
@@ -26,7 +36,7 @@ namespace Artisan.Compilation.Parsing
 
 		public override SourceLocation CurrentPosition
 		{
-			get { throw new NotImplementedException(); }
+			get { return _currentPosition; }
 		}
 
 		public override bool IsRestartable
@@ -44,14 +54,83 @@ namespace Artisan.Compilation.Parsing
 			}
 		}
 
+		public void Initialize(TextReader sourceReader)
+		{
+			RuntimeContract.RequiresParameter(sourceReader, "sourceReader");
+
+			Initialize(null, sourceReader, null, SourceLocation.None);
+		}
+
 		public override void Initialize(object state, TextReader sourceReader, SourceUnit sourceUnit, SourceLocation initialLocation)
 		{
-			throw new NotImplementedException();
+			_reader = sourceReader;
 		}
 
 		public override TokenInfo ReadToken()
 		{
+			Token nextToken = GetToken();
+
+			switch (nextToken.Type)
+			{
+				case TokenTypes.Var:
+					return new TokenInfo(nextToken.Source, TokenCategory.Keyword, TokenTriggers.None);
+				default:
+					return new TokenInfo(SourceSpan.None, TokenCategory.EndOfStream, TokenTriggers.None);
+			}
+		}
+
+		private Token GetToken()
+		{
+			if (_reader.Peek() == -1)
+				return new Token(SourceSpan.None, TokenTypes.Whitespace);
+
+			if (_currentPosition == SourceLocation.None) // TODO: move this
+				_currentPosition = new SourceLocation(0, 1, 1);
+
+			_initialPosition = _currentPosition;
+
+			int currentColumn = _currentPosition.Column;
+
+			_currentLine = _reader.ReadLine().ToCharArray();
+
+			while (currentColumn <= _currentLine.Length)
+			{
+				char currentChar = _currentLine[currentColumn - 1];
+				_currentPosition = new SourceLocation(0, _currentPosition.Line, currentColumn + 1);
+
+				switch (currentChar)
+				{
+					default:
+						if (MatchesIdentifierStart(currentChar))
+							return GetIdentifier(currentChar, currentColumn + 1);
+
+						throw new NotImplementedException();
+				}
+			}
+
 			throw new NotImplementedException();
+		}
+
+		private Token GetIdentifier(char firstChar, int currentColumn)
+		{
+			string identifier = firstChar.ToString();
+
+			while (currentColumn <= _currentLine.Length)
+			{
+				char currentChar = _currentLine[currentColumn - 1];
+				currentColumn++;
+				_currentPosition = new SourceLocation(0, _currentPosition.Line, currentColumn - 1);
+
+				identifier += currentChar.ToString();
+				// TODO: check that identifier matches a keyword
+			}
+
+			return new Token(new SourceSpan(new SourceLocation(_initialPosition.Index, _initialPosition.Line, _initialPosition.Column), new SourceLocation(_currentPosition.Index, _currentPosition.Line, currentColumn - 1)), TokenTypes.Var);
+		}
+
+		private static bool MatchesIdentifierStart(char current)
+		{
+			return current == 'v';
 		}
 	}
 }

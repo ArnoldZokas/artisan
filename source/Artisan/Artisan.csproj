@@ -31,7 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Compilation\Parsing\Token.cs" />
     <Compile Include="Compilation\Parsing\Tokeniser.cs" />
+    <Compile Include="Compilation\Parsing\TokenTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\RuntimeContract.cs" />
   </ItemGroup>
