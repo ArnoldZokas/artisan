@@ -1,6 +1,6 @@
 //  #######################################################
 //  
-//  # Copyright © Arnold Zokas 2010
+//  # Copyright (C) Arnold Zokas 2010
 //  
 //  # This source code is subject to terms and conditions of the Microsoft Public License.
 //  # A copy of the license can be found in the license.txt file at the root of this distribution.
@@ -13,11 +13,10 @@ using System;
 using System.IO;
 using Artisan.Utils;
 using Microsoft.Scripting;
-using Microsoft.Scripting.Runtime;
 
 namespace Artisan.Compilation.Parsing
 {
-	public class Tokeniser : TokenizerService
+	public class Tokeniser
 	{
 		private char[] _currentLine;
 		private SourceLocation _currentPosition;
@@ -29,60 +28,22 @@ namespace Artisan.Compilation.Parsing
 			_currentPosition = SourceLocation.None;
 		}
 
-		public override object CurrentState
-		{
-			get { return null; }
-		}
-
-		public override SourceLocation CurrentPosition
+		public SourceLocation CurrentPosition
 		{
 			get { return _currentPosition; }
-		}
-
-		public override bool IsRestartable
-		{
-			get { return false; }
-		}
-
-		public override ErrorSink ErrorSink
-		{
-			get { throw new NotImplementedException(); }
-			set
-			{
-				RuntimeContract.RequiresParameter(value, "value");
-				throw new NotImplementedException();
-			}
 		}
 
 		public void Initialize(TextReader sourceReader)
 		{
 			RuntimeContract.RequiresParameter(sourceReader, "sourceReader");
 
-			Initialize(null, sourceReader, null, SourceLocation.None);
-		}
-
-		public override void Initialize(object state, TextReader sourceReader, SourceUnit sourceUnit, SourceLocation initialLocation)
-		{
 			_reader = sourceReader;
 		}
 
-		public override TokenInfo ReadToken()
-		{
-			Token nextToken = GetToken();
-
-			switch (nextToken.Type)
-			{
-				case TokenTypes.Var:
-					return new TokenInfo(nextToken.Source, TokenCategory.Keyword, TokenTriggers.None);
-				default:
-					return new TokenInfo(SourceSpan.None, TokenCategory.EndOfStream, TokenTriggers.None);
-			}
-		}
-
-		private Token GetToken()
+		public Token ReadToken()
 		{
 			if (_reader.Peek() == -1)
-				return new Token(SourceSpan.None, TokenTypes.Whitespace);
+				return new Token(SourceSpan.None, TokenTypes.EndOfFile);
 
 			if (_currentPosition == SourceLocation.None) // TODO: move this
 				_currentPosition = new SourceLocation(0, 1, 1);

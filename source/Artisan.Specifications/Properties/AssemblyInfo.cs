@@ -1,6 +1,6 @@
 ﻿//  #######################################################
 //  
-//  # Copyright © Arnold Zokas 2010
+//  # Copyright (C) Arnold Zokas 2010
 //  
 //  # This source code is subject to terms and conditions of the Microsoft Public License.
 //  # A copy of the license can be found in the license.txt file at the root of this distribution.

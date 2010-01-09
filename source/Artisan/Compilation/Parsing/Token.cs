@@ -1,6 +1,6 @@
 ﻿//  #######################################################
 //  
-//  # Copyright © Arnold Zokas 2010
+//  # Copyright (C) Arnold Zokas 2010
 //  
 //  # This source code is subject to terms and conditions of the Microsoft Public License.
 //  # A copy of the license can be found in the license.txt file at the root of this distribution.
@@ -17,11 +17,11 @@ namespace Artisan.Compilation.Parsing
 	{
 		public Token(SourceSpan source, TokenTypes type)
 		{
-			Source = source;
+			SourceSpan = source;
 			Type = type;
 		}
 
-		public SourceSpan Source { get; private set; }
+		public SourceSpan SourceSpan { get; private set; }
 		public TokenTypes Type { get; private set; }
 	}
 }
